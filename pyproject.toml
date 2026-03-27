@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scimap"
+version = "0.1.0"
+description = "Structured research literature analysis pipeline powered by Claude"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.30.0",
+    "pdfplumber>=0.10.0",
+    "arxiv>=2.1.0",
+    "requests>=2.31.0",
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+    "jinja2>=3.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+scimap = "scimap.main:app"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-mock>=3.10",
+    "responses>=0.22",
+    "pytest-cov>=4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "--cov=scimap --cov-report=term-missing -q"
+
+[tool.setuptools.packages.find]
+include = ["scimap*"]
