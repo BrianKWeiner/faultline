@@ -1,5 +1,9 @@
 # Faultline
 
+<p align="center">
+  <img src="logo.svg" alt="Faultline logo" width="600"/>
+</p>
+
 **AI-powered pipeline that finds research gaps, traces intellectual lineage, and critically evaluates the literature for any research area.**
 
 Faultline (internally `scimap`) takes a research question or topic, automatically fetches relevant papers from Semantic Scholar and arXiv, and runs them through a structured four-phase analysis pipeline powered by Claude. The output is a publication-ready report that maps the landscape, finds contradictions, exposes hidden assumptions, and distills the "so what" for non-experts.
